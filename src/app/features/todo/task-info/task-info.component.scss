@@ -1,0 +1,30 @@
+.info-tasks {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: small;
+    font-weight: 500;
+  }
+
+  .color-blue {
+    color: #4ea8de;
+  }
+
+  .color-purple {
+    color: #8284fa;
+  }
+
+  .size-tasks {
+    background-color: #333333;
+    border-radius: 999px;
+    padding: 0.3rem;
+    color: #ffff;
+  }
+}

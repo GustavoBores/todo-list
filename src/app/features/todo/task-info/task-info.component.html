@@ -1,0 +1,14 @@
+<section class="info-tasks">
+    <div>
+        <span class="color-blue">Tarefas criadas</span>
+        <span class="size-tasks">{{tasks.length}}</span>
+    </div>
+    <div>
+        <span class="color-purple">Concluídas</span>
+        @if (tasks.length) {
+            <span class="size-tasks">{{getSizeCompletedOfTasks()}}</span>            
+        } @else {
+            <span class="size-tasks">0</span>            
+        }
+    </div>
+</section>

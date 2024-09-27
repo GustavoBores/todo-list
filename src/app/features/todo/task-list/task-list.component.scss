@@ -1,0 +1,124 @@
+.list-tasks {
+  height: 100%;
+  min-width: 25rem;
+  border-top: 0.1rem solid #333333;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 1rem;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+  }
+
+  li {
+    gap: 1rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2rem auto 2rem;
+    padding: 1rem;
+    height: 4rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #333333;
+    background-color: #262626;
+  }
+
+  p {
+    height: 100%;
+    width: 100%;
+    color: #ffff;
+    font-size: small;
+    overflow-y: auto;
+    scrollbar-color: #888 transparent;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  .check-task {
+    p {
+      text-decoration: line-through;
+      color: #808080;
+    }
+
+    border: transparent;
+
+    .button-confirm-task {
+      background-color: #5f61cf;
+      border: none;
+
+      &:hover {
+        background-color: #8284fa;
+      }
+    }
+  }
+
+  .button-confirm-task {
+    align-self: center;
+    justify-self: center;
+    background-color: transparent;
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    border: 2px solid #4ea7df;
+    border-radius: 50%;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+      background-color: #1e709f7e;
+    }
+  }
+
+  .button-remove-task {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    border-radius: 10rem;
+    transition: background-color 1s ease linear;
+
+    &:hover {
+      background-color: #333333;
+
+      path {
+        fill: #E25858;
+      }
+    }
+  }
+}
+
+
+//Nenhuma task
+.none-task {
+  display: flex;
+  padding-top: 4rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-family: "Inter", Mixed;
+  }
+
+  .color-gray-1 {
+    color: #808080;
+  }
+
+  .color-gray-2 {
+    color: #5f5f5f;
+  }
+
+}

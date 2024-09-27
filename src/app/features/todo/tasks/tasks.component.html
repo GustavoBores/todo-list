@@ -1,0 +1,13 @@
+<main>
+    <app-task-info 
+        [tasks]="tasks"
+    />
+    <app-task-list 
+        (updateTask)="updateTask($event)"
+        (deleteTask)="deleteTask($event)"
+        [tasks]="tasks" 
+    />
+    <app-task-form 
+        (postTask)="postTask($event)"
+    />
+</main>
