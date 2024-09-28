@@ -45,14 +45,14 @@ export class TasksComponent implements OnInit {
   }
 
   public deleteTask(id: string) {
-    const task = this.findTaskById(id);
+    const task = this.tasks.findIndex((task) => task.id === id);
 
-    if (task === undefined) {
+    if (task < 0) {
       return;
     }
 
     this.taskService.deleteTask(id).subscribe(() => {
-      this.tasks = this.tasks.filter((value) => value.id !== id);
+      this.tasks.splice(task, 1);
     });
   }
 
