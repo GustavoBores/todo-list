@@ -16,7 +16,13 @@
     } @else {
         <ul>
             @for (task of tasks; track $index) {
-                <li [ngClass]="task.completed ? 'check-task' : ''">
+                <li 
+                    [ngStyle]="{'--tasks': $index}" 
+                    [ngClass]="[
+                        task.completed ? 'check-task' : '',
+                        countRenderer > 2 ? 'counter': ''
+                    ]"
+                    >
                     <button (click)="onUpdateTask(task.id)" class="button-confirm-task">
                     </button>
                     <p>{{task.title}}</p>

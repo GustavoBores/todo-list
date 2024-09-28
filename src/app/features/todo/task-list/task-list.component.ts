@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { ITask } from '../../../interfaces/itask';
 import { CommonModule } from '@angular/common';
 
@@ -9,10 +9,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss'
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnChanges{
   @Input() public tasks: ITask[] = [];
   @Output() private updateTask = new EventEmitter<string>();
   @Output() private deleteTask = new EventEmitter<string>();
+
+  //Contador de renderizações
+  public countRenderer = 0;
 
   public onUpdateTask(id: string) {
     this.updateTask.emit(id);
@@ -27,4 +30,7 @@ export class TaskListComponent {
     return this.tasks.length === 0 ? true : false;
   }
 
+  public ngOnChanges(): void {
+    this.countRenderer++;
+  }
 }

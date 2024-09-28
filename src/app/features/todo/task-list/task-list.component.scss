@@ -1,3 +1,15 @@
+@keyframes staggered-entrance {
+  0% {
+    transform: translateX(-45rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+}
+
 .list-tasks {
   height: 100%;
   min-width: 25rem;
@@ -9,7 +21,7 @@
     width: 100%;
     row-gap: 1rem;
     overflow-y: auto;
-    overflow-wrap: break-word;
+    transition: all 1s ease;
   }
 
   li {
@@ -23,6 +35,18 @@
     border-radius: 0.5rem;
     border: 0.1rem solid #333333;
     background-color: #262626;
+    transform: translateX(-45rem);
+
+    animation-name: staggered-entrance;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.78,.04,.67,.98);
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-delay: calc(0.1s * var(--tasks));
+  }
+
+  .counter {
+    animation-delay: 0s;
   }
 
   p {
